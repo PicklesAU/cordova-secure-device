@@ -41,9 +41,10 @@
   BOOL jailbroken = [UIDevice currentDevice].isJB;
   LNPasscodeStatus status = [UIDevice currentDevice].passcodeStatus;
 
-  if (jailbroken || status == LNPasscodeStatusDisabled || status == LNPasscodeStatusUnknown) {
+  /* if (jailbroken || status == LNPasscodeStatusDisabled || status == LNPasscodeStatusUnknown) { */
+  if (jailbroken) {
     NSBundle *thisBundle = [NSBundle bundleWithPath: [[NSBundle mainBundle] pathForResource:NSStringFromClass([self class]) ofType: @"bundle"]];
-    NSString *alertMessage = [thisBundle localizedStringForKey:@"This application does not run on a device that is jailbroken or does not have a passcode set." value:nil table:nil];
+    NSString *alertMessage = [thisBundle localizedStringForKey:@"This application does not run on a jailbroken device." value:nil table:nil];
     NSString *alertCloseButtonText = [thisBundle localizedStringForKey:@"Close" value:nil table:nil];
     
     dispatch_async( dispatch_get_main_queue(), ^ {
