@@ -66,7 +66,7 @@ public class secureDevice extends CordovaPlugin {
 
     private void checkDevice() {
         boolean _isDeviceRooted = isDeviceRooted();
-        boolean _isPasscodeSet = doesDeviceHaveSecuritySetup(this.cordova.getActivity());
+        //boolean _isPasscodeSet = doesDeviceHaveSecuritySetup(this.cordova.getActivity());
 
         /* if (_isDeviceRooted || !_isPasscodeSet) { */
         if (_isDeviceRooted) {   
